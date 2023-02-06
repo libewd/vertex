@@ -6,8 +6,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/libewd/vertex">
-    <img src="images/logo.png" alt="Vertex" height="128">
+    <img src="images/logo.png" alt="Vertex" height="48">
   </a>
+  <br />
+  <br />
   <h3 align="center">HTTP microframework for Deno</h3>
   <p align="center">
 
