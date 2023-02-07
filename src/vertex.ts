@@ -8,6 +8,7 @@ import Context from "./context.ts";
 import { Server } from "../deps.ts";
 
 export type Middleware = (context: Context) => Promise<void>;
+export type MiddlewareFactory<T extends Middleware> = () => T;
 
 /**
  * @returns
@@ -32,9 +33,10 @@ export default function vertex() {
       return await this.server.listenAndServe();
     }
 
-    use(middleware: Middleware) {
+    use<T extends Middleware>(factory: MiddlewareFactory<T>) {
+      const middleware = factory();
       this.stack.push(middleware);
-      return this;
+      return middleware;
     }
 
     private makeResponse(context: Context) {

@@ -5,3 +5,4 @@
  */
 
 export { default as default } from "./src/vertex.ts";
+export { default as router } from "./src/middleware/router.ts";

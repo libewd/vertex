@@ -15,7 +15,7 @@ export default class Context {
   status = 404;
   body?: BodyInit;
 
-  constructor(private request: Request, private stack: Array<Middleware>) {
+  constructor(public request: Request, private stack: Array<Middleware>) {
   }
 
   async next() {
